@@ -8,7 +8,13 @@ import {
   Home, 
   Ruler,
   Zap,
-  Shield
+  Shield,
+  Compass,
+  Hammer,
+  ShieldCheck,
+  Palette,
+  Building2,
+  ClipboardList
 } from "lucide-react";
 import { useState } from "react";
 
@@ -17,35 +23,35 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: Building,
+      icon: Compass,
       title: "Architectural Design",
       description: "Innovative and sustainable architectural solutions that blend creativity with functionality to create stunning structures.",
       features: ["3D Modeling", "Sustainable Design", "Modern Architecture", "Space Planning"],
       color: "text-blue-500"
     },
     {
-      icon: HardHat,
+      icon: Building,
       title: "Structural Design",
       description: "Robust structural engineering designs ensuring safety, durability, and compliance with all building codes.",
       features: ["Load Analysis", "Foundation Design", "Steel Structures", "Concrete Design"],
       color: "text-green-500"
     },
     {
-      icon: Zap,
+      icon: Hammer,
       title: "Construction of Building",
       description: "Complete construction services from foundation to finishing, delivering high-quality buildings on time.",
       features: ["Project Management", "Quality Control", "Timeline Adherence", "Safety Standards"],
       color: "text-orange-500"
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Civil Engineering Supervision",
       description: "Professional supervision ensuring projects meet technical specifications and quality standards.",
       features: ["Site Inspection", "Quality Assurance", "Progress Monitoring", "Compliance Checks"],
       color: "text-purple-500"
     },
     {
-      icon: PaintBucket,
+      icon: Palette,
       title: "Interior Design",
       description: "Creating beautiful, functional interior spaces that reflect your style and enhance your lifestyle.",
       features: ["Space Design", "Material Selection", "Lighting Design", "Custom Solutions"],
@@ -59,14 +65,14 @@ const ServicesSection = () => {
       color: "text-indigo-500"
     },
     {
-      icon: Home,
+      icon: Building2,
       title: "Property Services",
       description: "Comprehensive property services including buying, selling, and rental management solutions.",
       features: ["Property Valuation", "Market Analysis", "Legal Support", "Investment Advice"],
       color: "text-red-500"
     },
     {
-      icon: Ruler,
+      icon: ClipboardList,
       title: "Project Planning",
       description: "Strategic project planning and management to ensure successful completion within budget and timeline.",
       features: ["Cost Estimation", "Resource Planning", "Risk Assessment", "Timeline Management"],

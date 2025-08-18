@@ -18,15 +18,15 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Modern Office Complex",
-      category: "commercial",
-      location: "Kigali, Rwanda",
-      duration: "18 months",
-      team: "25 professionals",
-      description: "State-of-the-art office complex featuring sustainable design and modern amenities.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+      title: "Modern Residential Building",
+      category: "Residential",
+      location: "Rugunga, Kigali",
+      duration: "1 months",
+      team: "4 professionals",
+      description: "A good example of modern residential architecture with sustainable features.",
+      image: "images/pro-1.png",
       status: "Completed",
-      year: "2023"
+      year: "2024"
     },
     {
       id: 2,
@@ -36,57 +36,21 @@ const ProjectsSection = () => {
       duration: "12 months",
       team: "15 professionals",
       description: "Elegant residential villa with contemporary architecture and premium finishes.",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+      image: "images/pro-2.jpg",
       status: "Completed",
       year: "2023"
     },
     {
       id: 3,
-      title: "Shopping Mall Development",
-      category: "commercial",
-      location: "Kimisagara, Kigali",
-      duration: "24 months",
-      team: "40 professionals",
-      description: "Large-scale shopping mall with modern retail spaces and entertainment facilities.",
-      image: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=800&h=600&fit=crop",
+      title: "Residential Apartment",
+      category: "Residential",
+      location: "Busanza, Kanombe",
+      duration: "6 months",
+      team: "10 professionals",
+      description: "A modern residential apartment building with eco-friendly design.",
+      image: "images/pro-3.jpg",
       status: "In Progress",
-      year: "2024"
-    },
-    {
-      id: 4,
-      title: "Bridge Infrastructure",
-      category: "infrastructure",
-      location: "Muhanga, Rwanda",
-      duration: "15 months",
-      team: "30 professionals",
-      description: "Modern bridge construction improving regional connectivity and transportation.",
-      image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&h=600&fit=crop",
-      status: "Completed",
-      year: "2022"
-    },
-    {
-      id: 5,
-      title: "Industrial Warehouse",
-      category: "industrial",
-      location: "Gasabo, Kigali",
-      duration: "10 months",
-      team: "20 professionals",
-      description: "Large industrial warehouse with advanced logistics and storage capabilities.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
-      status: "Completed",
-      year: "2023"
-    },
-    {
-      id: 6,
-      title: "Residential Complex",
-      category: "residential",
-      location: "Remera, Kigali",
-      duration: "20 months",
-      team: "35 professionals",
-      description: "Multi-family residential complex with modern amenities and green spaces.",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
-      status: "In Progress",
-      year: "2024"
+      year: "2026"
     }
   ];
 

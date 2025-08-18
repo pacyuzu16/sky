@@ -1,11 +1,31 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
 const VideoSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            videoRef.current.play();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -25,8 +45,30 @@ const VideoSection = () => {
     }
   };
 
+  const toggleFullscreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoRef.current.requestFullscreen();
+        videoRef.current.controls = true;
+      }
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (videoRef.current) {
+        videoRef.current.controls = !!document.fullscreenElement;
+      }
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
+
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/20">
+    <section ref={sectionRef} className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
@@ -82,6 +124,15 @@ const VideoSection = () => {
                   ) : (
                     <Volume2 className="h-5 w-5" />
                   )}
+                </Button>
+                
+                <Button
+                  onClick={toggleFullscreen}
+                  size="lg"
+                  className="bg-white/20 hover:bg-white/30 text-white border-white/20 backdrop-blur-sm"
+                  variant="outline"
+                >
+                  <Maximize className="h-5 w-5" />
                 </Button>
               </div>
             </div>

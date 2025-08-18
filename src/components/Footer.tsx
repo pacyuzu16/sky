@@ -50,7 +50,7 @@ const Footer = () => {
               <h1 className="text-white font-bold text-lg leading-tight">
                 Skyline Consultancy
                 <br />
-                <span className="text-sm font-medium text-white/90">& Engineering</span>
+                <span className="text-white font-bold text-lg">& Engineering</span>
               </h1>
             </div>
           </div>

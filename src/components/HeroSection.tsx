@@ -13,6 +13,7 @@ const HeroSection = () => {
     { src: "/images/new-1.jpg", alt: "Construction site aerial view" },
     { src: "/images/new-2.jpg", alt: "Construction site aerial view" },
     { src: "/images/new-3.jpg", alt: "Construction site aerial view" },
+     { src: "/images/new-4.jpg", alt: "Construction site aerial view" },
   ];
 
   // Check if video exists
