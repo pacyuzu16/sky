@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Building2, Phone, Mail } from "lucide-react";
@@ -6,13 +6,26 @@ import { Menu, X, Building2, Phone, Mail } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      if (window.scrollY < 10) {
+        setShowHeader(true); // Always show at top
+      } else if (window.scrollY > lastScrollY.current) {
+        setShowHeader(false); // Scrolling down
+      } else {
+        setShowHeader(true); // Scrolling up
+      }
+      lastScrollY.current = window.scrollY;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,22 +43,27 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-all duration-300">
-    
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-all duration-300 ${
+        showHeader ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3 animate-fade-in-left">
-            <img 
-              src="/lovable-uploads/e6415b3c-d84e-4730-85db-6ff2ff190be3.png" 
-              alt="Skyline Consultancy & Engineering Logo" 
+            <img
+              src="/lovable-uploads/e6415b3c-d84e-4730-85db-6ff2ff190be3.png"
+              alt="Skyline Consultancy & Engineering Logo"
               className="h-12 w-auto"
             />
             <div className="hidden sm:block">
               <h1 className="text-white font-bold text-lg leading-tight">
                 Skyline Consultancy
                 <br />
-                <span className="text-white font-bold text-lg">& Engineering</span>
+                <span className="text-white font-bold text-lg">
+                  & Engineering
+                </span>
               </h1>
             </div>
           </div>
@@ -57,13 +75,19 @@ const Header = () => {
                 key={item}
                 onClick={() => navigateToPage(item)}
                 className={`transition-colors duration-300 capitalize font-medium relative group ${
-                  isActivePage(item) ? "text-primary" : "text-white hover:text-primary"
+                  isActivePage(item)
+                    ? "text-primary"
+                    : "text-white hover:text-primary"
                 }`}
               >
                 {item}
-                <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-primary transition-all duration-300 ${
-                  isActivePage(item) ? "w-full" : "w-0 group-hover:w-full"
-                }`}></span>
+                <span
+                  className={`absolute left-0 bottom-0 h-0.5 bg-gradient-primary transition-all duration-300 ${
+                    isActivePage(item)
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
               </button>
             ))}
           </nav>
@@ -74,8 +98,8 @@ const Header = () => {
               <Phone className="h-4 w-4 text-primary" />
               <span className="text-white">+250 788 447 022</span>
             </div>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => navigateToPage("contact")}
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
@@ -106,7 +130,9 @@ const Header = () => {
                   key={item}
                   onClick={() => navigateToPage(item)}
                   className={`block w-full text-left py-3 transition-colors duration-300 capitalize font-medium border-b border-border/50 last:border-b-0 ${
-                    isActivePage(item) ? "text-primary" : "text-foreground hover:text-primary"
+                    isActivePage(item)
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   {item}
@@ -121,8 +147,8 @@ const Header = () => {
                   <Mail className="h-4 w-4 text-primary" />
                   <span>skylineconseng@gmail.com</span>
                 </div>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
                   onClick={() => navigateToPage("contact")}
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"

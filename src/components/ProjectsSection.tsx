@@ -3,9 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Calendar, MapPin, Users } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const navigate = useNavigate();
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -163,17 +165,14 @@ const ProjectsSection = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6">
-            Want to see more of our work or discuss your project?
+            Ready to collaborate or learn more about our work?
           </p>
           <Button 
             size="lg"
-            onClick={() => {
-              const element = document.getElementById("contact");
-              if (element) element.scrollIntoView({ behavior: "smooth" });
-            }}
+            onClick={() => navigate("/contact")}
             className="bg-gradient-primary text-primary-foreground shadow-elegant hover:shadow-lg transition-all duration-300 transform hover:scale-105"
           >
-            Start Your Project
+            Contact us
             <ExternalLink className="ml-2 h-5 w-5" />
           </Button>
         </div>
