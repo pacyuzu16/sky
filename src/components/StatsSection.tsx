@@ -4,10 +4,10 @@ const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: 150, label: "Projects Completed", suffix: "+" },
-    { number: 15, label: "Years Experience", suffix: "+" },
+    { number: 10, label: "Projects Completed", suffix: "+" },
+    { number: 2, label: "Years Experience", suffix: "+" },
     { number: 98, label: "Client Satisfaction", suffix: "%" },
-    { number: 25, label: "Expert Engineers", suffix: "+" }
+    { number: 10, label: "Expert Engineers", suffix: "+" }
   ];
 
   useEffect(() => {
