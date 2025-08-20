@@ -1,43 +1,38 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
+import { Star, User } from "lucide-react"; // Add User icon import
 
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Homeowner",
-      content: "Absolutely amazing work! They transformed our vision into reality with incredible attention to detail. The team was professional, punctual, and exceeded our expectations.",
+      name: "Jean Bosco Niyonzima",
+      role: "Homeowner, Kigali",
+      content: "Skyline Construction renovated our house in Kicukiro. The team was respectful, finished on time, and the quality is excellent. My family is very happy with the results.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
-      name: "Michael Chen",
-      role: "Business Owner",
-      content: "Outstanding construction services for our new office building. The project was completed on time and within budget. Highly recommend their expertise!",
+      name: "Aline Uwase",
+      role: "Coffee Shop Owner, Musanze",
+      content: "They built my coffee shop from scratch. The process was smooth, and they listened to all my ideas. Customers love the new space!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
     },
     {
-      name: "Emily Davis",
-      role: "Property Developer",
-      content: "Working with this team has been a game-changer for our development projects. Their quality of work and communication is second to none.",
+      name: "Eric Mugisha",
+      role: "Apartment Manager, Remera",
+      content: "Professional and reliable. Skyline handled our apartment block renovation with great attention to detail. Highly recommended for property managers.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
     },
     {
-      name: "Robert Wilson",
-      role: "Restaurant Owner",
-      content: "They renovated our restaurant with such precision and care. The space looks incredible and our customers love the new atmosphere!",
+      name: "Chantal Ingabire",
+      role: "School Director, Huye",
+      content: "Our school needed new classrooms. Skyline delivered quality work and kept us informed throughout. The children love their new learning environment.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
     },
     {
-      name: "Lisa Thompson",
-      role: "Homeowner",
-      content: "From kitchen remodeling to full home renovation, they handled everything perfectly. Professional, reliable, and the results speak for themselves.",
+      name: "Patrick Habimana",
+      role: "Restaurant Owner, Rubavu",
+      content: "They transformed my restaurant with a beautiful terrace. The team was friendly and the project was affordable. I will work with them again.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face"
     }
   ];
 
@@ -78,11 +73,7 @@ const TestimonialsSection = () => {
                   <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:bg-card/80 transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex items-center mb-4">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover mr-4"
-                        />
+                        <User className="w-12 h-12 rounded-full bg-muted text-muted-foreground mr-4 p-2" /> {/* Profile icon */}
                         <div>
                           <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
                           <p className="text-sm text-muted-foreground">{testimonial.role}</p>

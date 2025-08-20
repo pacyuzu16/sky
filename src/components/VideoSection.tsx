@@ -253,13 +253,26 @@ const VideoSection = () => {
               </div>
             )}
 
+            {/* Top Center Maximize Button (always visible on mobile) */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20 sm:hidden">
+              <Button
+                onClick={(e) => { e.stopPropagation(); toggleFullscreen(); }}
+                size="icon"
+                className="bg-black/60 hover:bg-black/80 text-white rounded-full p-2"
+                variant="outline"
+                aria-label="Maximize"
+              >
+                <Maximize className="h-6 w-6" />
+              </Button>
+            </div>
+
             {/* Modern Video Controls */}
             <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent transition-all duration-500 ${
               showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
             }`}>
               
-              {/* Top Controls */}
-              <div className="absolute top-4 right-4 flex items-center space-x-2">
+              {/* Top Controls (hidden on mobile, use new button above) */}
+              <div className="absolute top-4 right-4 flex items-center space-x-2 hidden sm:flex">
                 <Button
                   onClick={togglePictureInPicture}
                   size="sm"
@@ -268,7 +281,6 @@ const VideoSection = () => {
                 >
                   <PictureInPicture2 className="h-4 w-4" />
                 </Button>
-                
                 <Button
                   onClick={toggleFullscreen}
                   size="sm"
@@ -280,8 +292,7 @@ const VideoSection = () => {
               </div>
 
               {/* Bottom Controls */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 space-y-3">
-                
+              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 space-y-2 sm:space-y-3">
                 {/* Progress Bar */}
                 <div className="w-full">
                   <Slider
@@ -289,74 +300,71 @@ const VideoSection = () => {
                     onValueChange={handleProgressChange}
                     max={100}
                     step={0.1}
-                    className="w-full [&_[role=slider]]:w-4 [&_[role=slider]]:h-4 [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-primary [&_[role=slider]]:shadow-lg [&_[role=slider]]:transition-all [&_[role=slider]]:duration-200 [&_[role=slider]]:hover:scale-110"
+                    className="w-full [&_[role=slider]]:w-3 sm:[&_[role=slider]]:w-4 [&_[role=slider]]:h-3 sm:[&_[role=slider]]:h-4 [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-primary [&_[role=slider]]:shadow-lg [&_[role=slider]]:transition-all [&_[role=slider]]:duration-200 [&_[role=slider]]:hover:scale-110"
                   />
                 </div>
 
                 {/* Control Bar */}
                 <div className="flex items-center justify-between">
                   {/* Left Controls */}
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
                     <Button
                       onClick={(e) => { e.stopPropagation(); skipTime(-10); }}
-                      size="sm"
-                      className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105"
+                      size="icon"
+                      className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 p-1 sm:p-2"
                       variant="outline"
                     >
-                      <SkipBack className="h-4 w-4" />
+                      <SkipBack className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
-                    
                     <Button
                       onClick={(e) => { e.stopPropagation(); togglePlay(); }}
-                      size="sm"
-                      className="bg-white/90 hover:bg-white text-black border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105"
+                      size="icon"
+                      className="bg-white/90 hover:bg-white text-black border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 p-1 sm:p-2"
                       variant="outline"
                     >
                       {isPlaying ? (
-                        <Pause className="h-4 w-4" />
+                        <Pause className="h-4 w-4 sm:h-5 sm:w-5" />
                       ) : (
-                        <Play className="h-4 w-4 ml-0.5" />
+                        <Play className="h-4 w-4 sm:h-5 sm:w-5 ml-0.5" />
                       )}
                     </Button>
-                    
                     <Button
                       onClick={(e) => { e.stopPropagation(); skipTime(10); }}
-                      size="sm"
-                      className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105"
+                      size="icon"
+                      className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 p-1 sm:p-2"
                       variant="outline"
                     >
-                      <SkipForward className="h-4 w-4" />
+                      <SkipForward className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
 
                     {/* Volume Control */}
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-1 sm:space-x-2">
                       <Button
                         onClick={(e) => { e.stopPropagation(); toggleMute(); }}
-                        size="sm"
-                        className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300"
+                        size="icon"
+                        className="bg-black/40 hover:bg-black/60 text-white border-white/20 backdrop-blur-md transition-all duration-300 p-1 sm:p-2"
                         variant="outline"
                       >
                         {isMuted || volume === 0 ? (
-                          <VolumeX className="h-4 w-4" />
+                          <VolumeX className="h-4 w-4 sm:h-5 sm:w-5" />
                         ) : (
-                          <Volume2 className="h-4 w-4" />
+                          <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
                         )}
                       </Button>
-                      
-                      <div className="w-20 hidden sm:block">
+                      <div className="w-12 sm:w-20 hidden sm:block">
                         <Slider
                           value={[isMuted ? 0 : volume]}
                           onValueChange={handleVolumeChange}
                           max={100}
                           step={1}
-                          className="[&_[role=slider]]:w-3 [&_[role=slider]]:h-3 [&_[role=slider]]:bg-white [&_[role=slider]]:border [&_[role=slider]]:border-primary"
+                          className="[&_[role=slider]]:w-2 sm:[&_[role=slider]]:w-3 [&_[role=slider]]:h-2 sm:[&_[role=slider]]:h-3 [&_[role=slider]]:bg-white [&_[role=slider]]:border [&_[role=slider]]:border-primary"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Right Controls - Time Display */}
-                  <div className="text-white text-sm font-mono bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">
+                  <div className="text-white text-xs sm:text-sm font-mono bg-black/40 px-2 sm:px-3 py-1 rounded-full backdrop-blur-md">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </div>
                 </div>
