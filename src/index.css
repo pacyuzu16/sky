@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Skyline Consultancy & Engineering Design System
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 35 25% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 35 25% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 35 25% 8%;
+
+    /* Brand Colors - Golden Yellow Primary */
+    --primary: 45 95% 55%;
+    --primary-foreground: 35 25% 8%;
+    --primary-dark: 42 88% 45%;
+    --primary-light: 48 100% 70%;
+
+    /* Construction Industry Secondary */
+    --secondary: 35 25% 8%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 45 15% 95%;
+    --muted-foreground: 35 15% 40%;
+
+    --accent: 45 90% 60%;
+    --accent-foreground: 35 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 25% 88%;
+    --input: 45 25% 94%;
+    --ring: 45 95% 55%;
+
+    /* Design System Enhancements */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+    --gradient-overlay: linear-gradient(135deg, hsl(var(--secondary) / 0.95), hsl(var(--secondary) / 0.85));
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-construction: 0 8px 25px -8px hsl(var(--secondary) / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 35 25% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 35 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 35 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 95% 55%;
+    --primary-foreground: 35 25% 8%;
+    --primary-dark: 42 88% 45%;
+    --primary-light: 48 100% 70%;
+
+    --secondary: 45 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 35 15% 15%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 45 90% 60%;
+    --accent-foreground: 35 25% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 15% 22%;
+    --input: 35 15% 18%;
+    --ring: 45 95% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)/0.3));
+    
+    /* Enhanced shadows and effects */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --gradient-overlay: linear-gradient(135deg, hsl(var(--background) / 0.95), hsl(var(--background) / 0.85));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
