@@ -9,8 +9,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { validateAdminSession, clearAdminSession } from "@/utils/adminAuth";
 import AdminStats from "@/components/AdminStats";
 import AdminFilters, { FilterOptions } from "@/components/AdminFilters";
-import { 
-  LogOut, 
+import SEO from "@/components/SEO";
+import {
+  LogOut,
   Mail, 
   Phone, 
   Calendar, 
@@ -332,6 +333,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title="Admin Dashboard" description="Restricted admin area." path="/admin" noindex />
       {/* Header */}
       <header className="bg-card border-b border-border px-4 sm:px-6 py-4">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">

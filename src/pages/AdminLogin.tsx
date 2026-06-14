@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { validateAdminAccess, createAdminSession } from "@/utils/adminAuth";
 import { Lock, Shield, Eye, EyeOff } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const AdminLogin = () => {
   const [password, setPassword] = useState("");
@@ -49,6 +50,7 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen bg-secondary flex items-center justify-center p-6 relative overflow-hidden">
+      <SEO title="Admin Login" description="Restricted admin area." path="/admin/login" noindex />
       <div className="absolute inset-0 bg-gradient-overlay" />
       <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
