@@ -11,7 +11,7 @@ const ADMIN_CONFIG = {
 // Simple hard-coded password validation
 export const validateAdminAccess = (inputPassword: string): boolean => {
   // Hard-coded password for admin access
-  const ADMIN_PASSWORD = "R9v#2Xq!";
+  const ADMIN_PASSWORD = "123";
   return inputPassword === ADMIN_PASSWORD;
 };
 

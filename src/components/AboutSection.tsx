@@ -37,10 +37,10 @@ const AboutSection = () => {
   ];
 
   const achievements = [
-    { number: "500+", label: "Projects Completed", icon: Award },
-    { number: "15+", label: "Years of Experience", icon: Clock },
-    { number: "100%", label: "Client Satisfaction", icon: Star },
-    { number: "50+", label: "Expert Team Members", icon: Users }
+    { number: "15+", label: "Projects Completed", icon: Award },
+    { number: "6+", label: "Years of Experience", icon: Clock },
+    { number: "98%", label: "Client Satisfaction", icon: Star },
+    { number: "5+", label: "Expert Team Members", icon: Users }
   ];
 
   const certifications = [
@@ -60,7 +60,7 @@ const AboutSection = () => {
             About Us
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Building Excellence Since 2008
+            Building Excellence Since 2020
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Skyline Consultancy & Engineering has been at the forefront of Rwanda's construction 

@@ -48,10 +48,13 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted flex items-center justify-center p-6">
-      <Card className="w-full max-w-md shadow-elegant">
+    <div className="min-h-screen bg-secondary flex items-center justify-center p-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-overlay" />
+      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
+      <Card className="w-full max-w-md shadow-elegant relative z-10 border-border/60">
         <CardHeader className="text-center space-y-4">
-          <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
+          <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-glow">
             <Shield className="h-8 w-8 text-primary-foreground" />
           </div>
           <CardTitle className="text-2xl font-bold text-foreground">

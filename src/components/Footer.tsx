@@ -1,4 +1,4 @@
-import { Building2, Phone, Mail, MapPin, Globe, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Building2, Phone, Mail, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -68,17 +68,32 @@ const Footer = () => {
               
               {/* Social Links */}
               <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <a
+                  href="https://www.facebook.com/p/SkyLine-Consultancy-Engineering-100045342116635/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                >
                   <Facebook className="h-5 w-5 text-primary-foreground" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <a
+                  href="https://www.instagram.com/skylineconsengi/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                >
+                  <Instagram className="h-5 w-5 text-primary-foreground" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/gilbert-mugabuyisenga-25b069144/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                >
                   <Linkedin className="h-5 w-5 text-primary-foreground" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                  <Twitter className="h-5 w-5 text-primary-foreground" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-5 w-5 text-primary-foreground" />
                 </a>
               </div>
             </div>

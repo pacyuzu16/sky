@@ -22,7 +22,7 @@ const FeaturesSection = () => {
     {
       icon: Users,
       title: "Experienced Team",
-      description: "Skilled professionals with decades of combined experience in construction.",
+      description: "Skilled professionals with years of combined experience in construction.",
       link: "/about"
     },
     {
@@ -37,7 +37,7 @@ const FeaturesSection = () => {
     <section className="py-24 bg-gradient-to-b from-background to-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
             Why Choose <span className="text-primary">Skyline</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

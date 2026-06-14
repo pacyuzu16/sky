@@ -14,11 +14,10 @@ import {
   Clock, 
   Send, 
   Building2,
-  Globe,
   MessageSquare,
   Facebook,
   Linkedin,
-  Twitter
+  Instagram
 } from "lucide-react";
 
 const ContactSection = () => {
@@ -237,7 +236,7 @@ const ContactSection = () => {
                       <div key={i} className="w-8 h-8 rounded-full bg-gradient-primary border-2 border-background"></div>
                     ))}
                   </div>
-                  <span className="text-sm text-muted-foreground">100+ Happy Clients</span>
+                  <span className="text-sm text-muted-foreground">15+ Happy Clients</span>
                 </div>
               </div>
             </div>
@@ -391,17 +390,32 @@ const ContactSection = () => {
           </div>
           
           <div className="flex justify-center space-x-6 mb-12">
-            <a href="#" className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg">
+            <a
+              href="https://www.facebook.com/p/SkyLine-Consultancy-Engineering-100045342116635/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg"
+            >
               <Facebook className="h-7 w-7 text-primary-foreground" />
             </a>
-            <a href="#" className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg">
+            <a
+              href="https://www.instagram.com/skylineconsengi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg"
+            >
+              <Instagram className="h-7 w-7 text-primary-foreground" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gilbert-mugabuyisenga-25b069144/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg"
+            >
               <Linkedin className="h-7 w-7 text-primary-foreground" />
-            </a>
-            <a href="#" className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg">
-              <Twitter className="h-7 w-7 text-primary-foreground" />
-            </a>
-            <a href="#" className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg">
-              <Globe className="h-7 w-7 text-primary-foreground" />
             </a>
           </div>
         </div>

@@ -59,14 +59,14 @@ const ProjectsSection = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <Badge variant="outline" className="mb-4 border-primary text-primary">
             Our Portfolio
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">

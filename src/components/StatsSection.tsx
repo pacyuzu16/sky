@@ -4,10 +4,10 @@ const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const stats = [
-    { number: 150, label: "Projects Completed", suffix: "+" },
-    { number: 15, label: "Years Experience", suffix: "+" },
+    { number: 15, label: "Projects Completed", suffix: "+" },
+    { number: 6, label: "Years Experience", suffix: "+" },
     { number: 98, label: "Client Satisfaction", suffix: "%" },
-    { number: 25, label: "Expert Engineers", suffix: "+" }
+    { number: 5, label: "Expert Engineers", suffix: "+" }
   ];
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const StatsSection = () => {
     <section id="stats-section" className="py-24 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
             Proven <span className="text-primary">Excellence</span>
           </h2>
           <p className="text-xl text-secondary-foreground/80 max-w-2xl mx-auto">
