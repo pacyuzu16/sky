@@ -2,6 +2,7 @@ import SEO from "@/components/SEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import FeaturedProjectsSection from "@/components/FeaturedProjectsSection";
 import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import VideoSection from "@/components/VideoSection";
@@ -20,6 +21,7 @@ const Home = () => {
       <main>
         <HeroSection />
         <FeaturesSection />
+        <FeaturedProjectsSection />
         <StatsSection />
         <TestimonialsSection />
         <VideoSection />
